@@ -9,9 +9,8 @@ const getTrending = async() => {
     try {
         const { data } = await axios.get(`${TRENDING_PATH}?api_key=${KEY_API}`);
         console.log(data.results, "data");
-        const trendingMovies = data.results
-        console.log(trendingMovies, "variable");
-        return trendingMovies;
+        const trendingData = data.results
+        return trendingData;
     } catch (error) {
         console.log('Something wrong with API', error.message);
     };
