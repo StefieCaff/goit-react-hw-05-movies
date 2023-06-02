@@ -3,6 +3,7 @@ import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 
 import { getMovie } from "API/get-movie";
 import { IMAGE_URL } from "API/api-params";
+import NotFound from "components/NotFound/NotFound";
 
 const MovieDetails = () => {
     const location = useLocation();
@@ -31,7 +32,7 @@ const MovieDetails = () => {
     return (
         <div>
             <Link to={backLinkHref}>Go Back</Link>
-            {movieData && (
+            {movieData ? (
             <div>
                 <img src={IMAGE_URL + movieData.poster_path } alt="" width='100px'></img>
                 <ul>
@@ -49,12 +50,12 @@ const MovieDetails = () => {
                         <p></p>
                     </li>
                 </ul>
+                <ul>
+                    <li><Link to="cast">Cast</Link></li>
+                    <li><Link to ="reviews">Reviews</Link></li>
+                </ul>
             </div>
-            )}
-            <ul>
-                <li><Link to="cast">Cast</Link></li>
-                <li><Link to ="reviews">Reviews</Link></li>
-            </ul>
+            ) : (<NotFound/>)}
             <Outlet/>
         </div>
     );
