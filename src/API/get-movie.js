@@ -11,9 +11,8 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 const getMovie = async (movieID) => {
     
     try {
-        const { data } = await axios.get(`${MOVIE_PATH}${movieID}?api_key=${KEY_API}&language=${language}`);
-        console.log(data.results, "data");
-        const movieDetails = data.results
+        const res = await axios.get(`${MOVIE_PATH}${movieID}?api_key=${KEY_API}&language=${language}`);
+        const movieDetails = res.data
         console.log(movieDetails, "variable");
         return movieDetails;
     } catch (error) {

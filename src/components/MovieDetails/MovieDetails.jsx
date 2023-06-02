@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 
 import { getMovie } from "API/get-movie";
+import { IMAGE_URL } from "API/api-params";
 
 const MovieDetails = () => {
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/";
-    const movieID = useParams();
-
+    const { movieID } = useParams();
     const [movieData, setMovieData] = useState([]);
     
 
@@ -17,11 +17,12 @@ const MovieDetails = () => {
         getMovie(movieID)
             .then(data => {
                 if (mounted) {
-                   setMovieData(data)
+                    setMovieData(data)
+                    console.log(data, 'movie');
                }
             });
+        
         console.log(movieID, 'id');
-        console.log(movieData, 'movie');
         
         return () => mounted = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,7 +33,7 @@ const MovieDetails = () => {
             <Link to={backLinkHref}>Go Back</Link>
             {movieData && (
             <div>
-                <img alt=""></img>
+                <img src={IMAGE_URL + movieData.poster_path } alt="" width='100px'></img>
                 <ul>
                     <li>
                         <h3>Title</h3>
@@ -50,11 +51,11 @@ const MovieDetails = () => {
                 </ul>
             </div>
             )}
-            
             <ul>
                 <li><Link to="cast">Cast</Link></li>
                 <li><Link to ="reviews">Reviews</Link></li>
             </ul>
+            <Outlet/>
         </div>
     );
 };

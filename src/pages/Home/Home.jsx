@@ -14,13 +14,15 @@ const Home = () => {
             .then(data => {
                 if (mounted) {
                     setTrendingData(data);
+                    console.log(data, "data");
                 } 
             });
+        
         return () => mounted = false;
     //getting error calling for trendingMovies to be in dependency array or removal of array. Either of these options cause an infinite loop, so I officially ignored the error.
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-console.log(trendingData);
+
     return (
         <div>
             <h1>Trending Movies updated daily, thanks to the TMDB API</h1>
