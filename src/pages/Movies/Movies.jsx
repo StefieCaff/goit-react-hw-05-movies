@@ -10,8 +10,8 @@ const Movies = () => {
     const [searchParams] = useSearchParams();
     const query = searchParams.get('query');
     const [searchData, setSearchData] = useState([]);
-    const [search, setSearch] = useState('');
-    
+   // const [search, setSearch] = useState('');
+
     console.log(query, 'query');
     
     useEffect(() => {
@@ -22,6 +22,7 @@ const Movies = () => {
                 setSearchData(data)
             })
         console.log(searchData, 'movies');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [query]);
 
 

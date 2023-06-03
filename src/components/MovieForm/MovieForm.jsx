@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+//import { useState } from "react";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ const MovieForm = () => {
         e.preventDefault();
         nav(`/movies?query=${query}`)
         console.log('Beauty noting');
-        
+
     };
 
     return (
