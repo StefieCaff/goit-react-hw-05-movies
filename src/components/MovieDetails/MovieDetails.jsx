@@ -6,9 +6,9 @@ import { IMAGE_URL } from "API/api-params";
 import NotFound from "components/NotFound/NotFound";
 
 const MovieDetails = () => {
-    const location = useLocation();
-    const backLinkHref = location.state?.from ?? "/";
     const { movieID } = useParams();
+    const location = useLocation();
+    //const backLinkHref = location.state.from ?? '/movies/';
     const [movieData, setMovieData] = useState([]);
     
     useEffect(() => {
@@ -26,7 +26,7 @@ const MovieDetails = () => {
  
     return (
         <div>
-            <Link to={backLinkHref}>Go Back</Link>
+            <Link to={location.state.from}>Go Back</Link>
             {movieData ? (
             <div>
                 <img src={IMAGE_URL + movieData.poster_path } alt="" width='100px'></img>

@@ -23,7 +23,7 @@ const Reviews = () => {
 
     return (
         <div>
-            {reviewsData.total_results === 0
+            {reviewsData.length === 0
                 ? (
                     <p>There is no data in the TMDB database for reviews of this film.</p>
                 )
