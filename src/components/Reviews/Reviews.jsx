@@ -13,14 +13,25 @@ const Reviews = () => {
         getReviews(movieID)
             .then(data => {
                 if (mounted) {
-                    setReviewsData(data);
-                    console.log(data, 'reviews');
+                    setReviewsData(data.results);
+                    console.log(data.results, 'reviews');
+                    console.log(reviewsData.content, 'content');
                }
            })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
-        <div>Reviews</div>
+        <div>
+            {reviewsData.total_results === 0
+                ? (
+                    <p>There is no data in the TMDB database for reviews of this film.</p>
+                )
+                : reviewsData.map((review, idx) => (
+                    <p key={idx}>{review.content}</p>
+                ))
+            }
+        </div>
     );
 };
 

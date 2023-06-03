@@ -17,16 +17,20 @@ const Cast = () => {
                     console.log(data.cast, 'cast');
                 };
             });
-        console.log(castData.name, "name");
         return () => mounted = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
         <div>
-            {castData ? (
-                <h3>hello</h3>
-            )
-            : (<p>There is no data available in the TMDB database for the cast of this film. </p>)}
+            {castData.length === 0
+                ? (
+                   <p>There is no data in the TMDB database for the cast of this film.</p>
+                )
+                : castData.map((cast, idx) => (
+                    <h3 key={idx}>{ cast.name}</h3>
+                ))
+            }
         </div>
     );
 };
