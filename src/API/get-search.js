@@ -6,10 +6,9 @@ const language = 'en-US';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 
-const getSearch = async(query) => {
+const getSearch = async (query) => {
     try {
         const { data } = await axios.get(`${SEARCH_PATH}?api_key=${KEY_API}&query=${query}&language=${language}&include_adult=false`);
-        console.log(data.results, "data");
         const searchMovies = data.results
         console.log(searchMovies, "variable");
         return searchMovies;
