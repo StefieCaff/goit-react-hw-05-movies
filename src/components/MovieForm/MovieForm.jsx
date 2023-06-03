@@ -12,9 +12,8 @@ const MovieForm = () => {
         e.preventDefault();
         nav(`/movies?query=${query}`)
         console.log('Beauty noting');
-
     };
-
+console.log(query, 'query');
     return (
         <div>
             <form onSubmit={handleSubmit}>
