@@ -1,18 +1,24 @@
 
-//import { useState } from "react";
-import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import { func } from 'prop-types';
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 
-const MovieForm = () => {
+const MovieForm = ({onSubmit}) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') || '';
     const nav = useNavigate();
   
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (query === "") {
+            console.log('empty');
+            return;
+        }
+        onSubmit(query);
         nav(`/movies?query=${query}`)
         console.log('Beauty noting');
     };
+
 console.log(query, 'query');
     return (
         <div>
@@ -24,14 +30,13 @@ console.log(query, 'query');
                 />
                 <button type='submit'>Search</button>
             </form>
-            <Outlet />
         </div>
     );
 };
 
-// MovieForm.propTypes = {
-//     setQuery: func.isRequired,
-// };
+MovieForm.propTypes = {
+    onSubmit: func.isRequired,
+};
 
 export default MovieForm;
 

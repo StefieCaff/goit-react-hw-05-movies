@@ -10,19 +10,23 @@ const Movies = () => {
     const [searchParams] = useSearchParams();
     const query = searchParams.get('query') || '';
     const [searchData, setSearchData] = useState([]);
-   // const [search, setSearch] = useState('');
-
-    console.log(query, 'query');
+    const [search, setSearch] = useState('');
     
-    useEffect(() => {
-        if (query === '') return;
-        
-        getSearch(query)
+    const handleSubmit = () => {
+         getSearch(search)
             .then(data => {
                 setSearchData(data)
             })
         console.log(searchData, 'movies');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    };
+    
+    console.log(query, 'query');
+    
+    useEffect(() => {
+        if (query === '') return;
+        else {
+            return setSearch(query);
+        };
     }, [query]);
 
 
@@ -30,9 +34,10 @@ const Movies = () => {
         <div>
             <Link to={backLinkHref}>Go Back</Link>
             <h1>Movie Search</h1>
-            <MovieForm />
-            {searchData.map((data, idx) => (
-                <h3 key={ idx }>{ data.title}</h3>
+            <MovieForm onSubmit={ handleSubmit} />
+            {searchData.map((data) => (
+            
+                <Link to={`./${data.id}`} key={ data.id }><h3>{ data.title}</h3></Link>
 
             ))}
         </div>
