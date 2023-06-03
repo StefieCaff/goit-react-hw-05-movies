@@ -11,20 +11,15 @@ const MovieDetails = () => {
     const { movieID } = useParams();
     const [movieData, setMovieData] = useState([]);
     
-
     useEffect(() => {
         let mounted = true;
-        
         getMovie(movieID)
             .then(data => {
                 if (mounted) {
                     setMovieData(data)
                     console.log(data, 'movie');
-               }
-            });
-        
-        console.log(movieID, 'id');
-        
+                };
+            }); 
         return () => mounted = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

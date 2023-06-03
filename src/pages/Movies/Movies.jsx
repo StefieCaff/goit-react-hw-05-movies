@@ -37,7 +37,7 @@ const Movies = () => {
             <MovieForm onSubmit={ handleSubmit} />
             {searchData.map((data) => (
             
-                <Link to={`./${data.id}`} key={ data.id }><h3>{ data.title}</h3></Link>
+            <Link to={`./${data.id}`} key={ data.id }><h3>{ data.title}</h3></Link>
 
             ))}
         </div>
