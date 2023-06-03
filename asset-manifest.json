@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.3c285e78.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.27f7fe4a.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.e1954d3f.js",
     "static/media/cave-of-wonders.jpg": "/goit-react-hw-05-movies/static/media/cave-of-wonders.16ce067b90886f1b7a6e.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.3c285e78.css.map": "/goit-react-hw-05-movies/static/css/main.3c285e78.css.map",
-    "main.27f7fe4a.js.map": "/goit-react-hw-05-movies/static/js/main.27f7fe4a.js.map"
+    "main.e1954d3f.js.map": "/goit-react-hw-05-movies/static/js/main.e1954d3f.js.map"
   },
   "entrypoints": [
     "static/css/main.3c285e78.css",
-    "static/js/main.27f7fe4a.js"
+    "static/js/main.e1954d3f.js"
   ]
 }
