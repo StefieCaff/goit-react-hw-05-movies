@@ -1,14 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { string } from 'prop-types';
 
-const Nav = () => {
+import { StyledLink } from './styled-nav';
+const Nav = ({className}) => {
     return (
-        <div>
+        <div className={className}>
             <nav>
-                <NavLink to="/">Home</NavLink>{' '}
-                <NavLink to="/movies">Movies</NavLink>
+                <StyledLink to="/">Home</StyledLink>{' '}
+                <StyledLink to="/movies">Movies</StyledLink>
             </nav>
         </div>
     );
 };
-
-export default Nav;
+Nav.propTypes = {
+    className: string,
+};
+export {Nav};

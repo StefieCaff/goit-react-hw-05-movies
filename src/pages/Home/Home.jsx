@@ -1,10 +1,11 @@
+import {string} from 'prop-types'
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { getTrending } from "API/get-trending";
 import { IMAGE_URL } from "API/api-params";
 
-const Home = () => {
+const Home = ({className}) => {
     const [trendingData, setTrendingData] = useState([]);
     useEffect(() => {
         let mounted = true;
@@ -23,23 +24,23 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <div className={className}>
             <h1>Trending Movies updated daily, thanks to the TMDB API</h1>
-
-            <ul>
-                {trendingData.map((movie, idx) => (
-                    <li key={idx}>
-                        <Link to={`./movies/${movie.id}`}>
-                            <img src={IMAGE_URL + movie.poster_path} alt="" width='100px' />
-                            {movie.title}
-                        </Link>
-                </li>
-                ))}
-               
-        </ul>
-
+                <ul>
+                    {trendingData.map((movie, idx) => (
+                        <li key={idx}>
+                            <Link to={`./movies/${movie.id}`}>
+                                <img src={IMAGE_URL + movie.poster_path} alt="" width='100px' />
+                                {movie.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
         </div>
     );
 };
 
+Home.propTypes = {
+    className: string,
+}
 export default Home;

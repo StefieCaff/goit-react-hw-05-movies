@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import Nav from './Nav/Nav';
+
+import {StyledNav} from './Nav/styled-nav';
 import { Loader } from './Loader/Loader';
 
 const Home = lazy(() => import ('pages/Home/Home'));
@@ -12,8 +13,8 @@ const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
-    <div>
-      <Nav />
+    <>
+      <StyledNav />
       
       <Routes>
         <Route
@@ -52,6 +53,6 @@ export const App = () => {
         <Route path='*' element={<NotFound />} />
       </Routes>
       
-    </div>
+    </>
   );
 };
