@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams, useLocation, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 import { getMovie } from "API/get-movie";
 import { IMAGE_URL } from "API/api-params";
-import NotFound from "components/NotFound/NotFound";
+import NotFound from "pages/NotFound/NotFound";
 
 const MovieDetails = () => {
     const { movieID } = useParams();
-    const location = useLocation();
-    //const backLinkHref = location.state.from ?? '/movies/';
     const [movieData, setMovieData] = useState([]);
     
     useEffect(() => {
@@ -26,7 +24,6 @@ const MovieDetails = () => {
  
     return (
         <div>
-            <Link to={location.state.from}>Go Back</Link>
             {movieData ? (
             <div>
                 <img src={IMAGE_URL + movieData.poster_path } alt="" width='100px'></img>
@@ -50,8 +47,10 @@ const MovieDetails = () => {
                     <li><Link to ="reviews">Reviews</Link></li>
                 </ul>
             </div>
-            ) : (<NotFound/>)}
-            <Outlet/>
+            ) : (<NotFound />)}
+            
+                <Outlet />
+            
         </div>
     );
 };

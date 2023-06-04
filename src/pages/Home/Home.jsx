@@ -6,7 +6,6 @@ import { IMAGE_URL } from "API/api-params";
 
 const Home = () => {
     const [trendingData, setTrendingData] = useState([]);
-    // const nav = useNavigate();
     useEffect(() => {
         let mounted = true;
 
