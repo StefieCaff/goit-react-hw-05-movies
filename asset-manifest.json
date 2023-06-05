@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.61825696.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.f99dfda4.js",
-    "static/js/377.d54a561a.chunk.js": "/goit-react-hw-05-movies/static/js/377.d54a561a.chunk.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.d18b3e1f.js",
+    "static/js/377.84a510a5.chunk.js": "/goit-react-hw-05-movies/static/js/377.84a510a5.chunk.js",
     "static/js/884.4a459267.chunk.js": "/goit-react-hw-05-movies/static/js/884.4a459267.chunk.js",
     "static/js/695.789cabda.chunk.js": "/goit-react-hw-05-movies/static/js/695.789cabda.chunk.js",
     "static/js/794.ec4cd7b3.chunk.js": "/goit-react-hw-05-movies/static/js/794.ec4cd7b3.chunk.js",
@@ -12,8 +12,8 @@
     "static/media/cave-of-wonders.jpg": "/goit-react-hw-05-movies/static/media/cave-of-wonders.16ce067b90886f1b7a6e.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.61825696.css.map": "/goit-react-hw-05-movies/static/css/main.61825696.css.map",
-    "main.f99dfda4.js.map": "/goit-react-hw-05-movies/static/js/main.f99dfda4.js.map",
-    "377.d54a561a.chunk.js.map": "/goit-react-hw-05-movies/static/js/377.d54a561a.chunk.js.map",
+    "main.d18b3e1f.js.map": "/goit-react-hw-05-movies/static/js/main.d18b3e1f.js.map",
+    "377.84a510a5.chunk.js.map": "/goit-react-hw-05-movies/static/js/377.84a510a5.chunk.js.map",
     "884.4a459267.chunk.js.map": "/goit-react-hw-05-movies/static/js/884.4a459267.chunk.js.map",
     "695.789cabda.chunk.js.map": "/goit-react-hw-05-movies/static/js/695.789cabda.chunk.js.map",
     "794.ec4cd7b3.chunk.js.map": "/goit-react-hw-05-movies/static/js/794.ec4cd7b3.chunk.js.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.61825696.css",
-    "static/js/main.f99dfda4.js"
+    "static/js/main.d18b3e1f.js"
   ]
 }
