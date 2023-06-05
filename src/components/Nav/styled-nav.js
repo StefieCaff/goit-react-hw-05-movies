@@ -16,9 +16,12 @@ const StyledLink = styled(NavLink)`
     color: #4FB3F3;
     font-size: 20px;
     font-weight: 700;
-
-    &:hover{
+    transition: color, .9s;
+    &:hover,
+    &:focus{
     color: #E14FF3;
+    
+            box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
     }
 `
 export { StyledNav, StyledLink };

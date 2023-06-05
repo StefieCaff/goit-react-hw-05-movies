@@ -25,6 +25,19 @@ const StyledHome = styled.div`
     li {
         width: 300px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: box-shadow, .9s;
+        &:hover,
+        &:focus{
+            // box-shadow: 
+            // rgba(243, 79, 97, 0.25) 0px 54px 55px, 
+            // rgba(243, 79, 97, 0.12) 0px -12px 30px, 
+            // rgba(243, 79, 97, 0.12) 0px 4px 6px, 
+            // rgba(243, 79, 97, 0.17) 0px 12px 13px, 
+            // rgba(243, 79, 97, 0.09) 0px -3px 5px;
+            box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+        }
+
+
         @media (min-width: 768px) {
             width: 235px;
         }
