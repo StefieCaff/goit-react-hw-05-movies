@@ -7,6 +7,7 @@
   scroll-behavior: smooth;
 }
 body {
+  background-color: #F4F5FF;
   line-height: 1.5;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -23,8 +23,8 @@ const StyledHome = styled.div`
         }
     }
     li {
-        
         width: 300px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         @media (min-width: 768px) {
             width: 235px;
         }
@@ -47,9 +47,13 @@ const StyledLinkTitle = styled(NavLink)`
     background-color: blue;
 `;
 const StyledTitle = styled.p`
-    color: red;
-    padding: 3px 0 20px 0;
-    background-color: #EFFCDB;
+    height: 71px;
+    padding: 5px;
+    color: #4FB3F3;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    background-color: #fff;
 `;
 export {
     StyledHome,
