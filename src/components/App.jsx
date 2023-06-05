@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-import {StyledNav} from './Nav/styled-nav';
+import { StyledNav } from './Nav/styled-nav';
 import { Loader } from './Loader/Loader';
 
 const Home = lazy(() => import ('pages/Home/Home'));

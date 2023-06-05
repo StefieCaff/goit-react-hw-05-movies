@@ -1,9 +1,12 @@
-import {string} from 'prop-types'
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 
 import { getTrending } from "API/get-trending";
 import { IMAGE_URL } from "API/api-params";
+import { StyledHome, StyledTitle } from "./styled-home";
+import { StyledSection } from "components/Section/styled-section";
+import { StyledContainer } from "components/Container/styled-container";
+import { StyledLinkTitle } from "./styled-home";
 
 const Home = ({className}) => {
     const [trendingData, setTrendingData] = useState([]);
@@ -24,23 +27,22 @@ const Home = ({className}) => {
     }, []);
 
     return (
-        <div className={className}>
-            <h1>Trending Movies updated daily, thanks to the TMDB API</h1>
-                <ul>
+        <StyledSection>
+            <StyledContainer>
+        <StyledHome>
+                <ul className={className}>
                     {trendingData.map((movie, idx) => (
                         <li key={idx}>
-                            <Link to={`./movies/${movie.id}`}>
-                                <img src={IMAGE_URL + movie.poster_path} alt="" width='100px' />
-                                {movie.title}
-                            </Link>
+                            <StyledLinkTitle to={`./movies/${movie.id}`}>
+                                <img src={IMAGE_URL + movie.poster_path} alt=""/>
+                                
+                            </StyledLinkTitle>
+                            <StyledTitle>{movie.title}</StyledTitle>
                         </li>
                     ))}
                 </ul>
-        </div>
+        </StyledHome></StyledContainer></StyledSection>
     );
 };
 
-Home.propTypes = {
-    className: string,
-}
 export default Home;
