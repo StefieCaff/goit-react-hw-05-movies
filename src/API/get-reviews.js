@@ -13,7 +13,6 @@ const getReviews = async (movieID) => {
     try {
         const res = await axios.get(`movie/${movieID}/${REVIEWS_PATH}?api_key=${KEY_API}&language=${language}`);
         const movieReviews = res.data
-        console.log(movieReviews, "variable");
         return movieReviews;
     } catch (error) {
         console.log('Something wrong with API', error.message);

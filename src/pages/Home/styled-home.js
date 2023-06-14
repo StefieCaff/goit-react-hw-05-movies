@@ -47,7 +47,7 @@ const StyledHome = styled.div`
     }
     img{
         width; 300px;
-
+        border-bottom: .5px solid transparent;
         @media (min-width: 768px) {
             width: 235px;
         }
@@ -59,17 +59,28 @@ const StyledHome = styled.div`
 const StyledLinkTitle = styled(NavLink)`
     background-color: blue;
 `;
-const StyledTitle = styled.p`
-    height: 71px;
+const StyledTitle = styled.h3`
+    height: 81px;
     padding: 5px;
-    color: #4FB3F3;
     font-weight: bold;
-    font-size: 20px;
-    text-align: center;
+    font-size: 18px;
     background-color: #fff;
+    p{
+        color: #E14FF3;
+        margin-right: 10px;
+    }
 `;
+
+const StyledHeading = styled.h1`
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: grey;
+`
+
 export {
     StyledHome,
     StyledLinkTitle,
-    StyledTitle
+    StyledTitle,
+    StyledHeading
 };

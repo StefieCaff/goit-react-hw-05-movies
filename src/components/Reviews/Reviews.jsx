@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 
 import { getReviews } from "API/get-reviews";
 
+import StyledReviews from "./styled-reviews";
+
 const Reviews = () => {
     const { movieID } = useParams();
     const [reviewsData, setReviewsData] = useState([]);
-    console.log(movieID, 'id reviews');
 
     useEffect(() => {
         let mounted = true
@@ -14,24 +15,31 @@ const Reviews = () => {
             .then(data => {
                 if (mounted) {
                     setReviewsData(data.results);
-                    console.log(data.results, 'reviews');
-                    console.log(reviewsData.content, 'content');
+                    console.log(reviewsData.content, 'reviews');
                }
            })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-
+console.log(reviewsData);
     return (
-        <div>
-            {reviewsData.length === 0
-                ? (
-                    <p>There is no data in the TMDB database for reviews of this film.</p>
-                )
-                : reviewsData.map((review, idx) => (
-                    <p key={idx}>{review.content}</p>
+        <StyledReviews>
+            <ul>
+                {reviewsData.length === 0
+                    ? (
+                        <li>There are no reviews in the TMDB database for this film.</li>
+                    )
+                    : reviewsData.map((review, idx) => (
+                        <li key={idx}>
+                            <h4>Author</h4>
+                            <p>{review.author}</p>
+                            <h4>Review</h4>
+                            <h5>{review.content}</h5>
+                        </li>
+                    
                 ))
-            }
-        </div>
+                }
+            </ul>
+        </StyledReviews>
     );
 };
 

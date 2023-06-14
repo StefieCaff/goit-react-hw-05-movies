@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 
 import { getTrending } from "API/get-trending";
 import { IMAGE_URL } from "API/api-params";
-import { StyledHome, StyledTitle } from "./styled-home";
+import { StyledHeading, StyledHome, StyledTitle } from "./styled-home";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledContainer } from "components/Container/styled-container";
 import { StyledLinkTitle } from "./styled-home";
 
-const Home = ({className}) => {
+const Home = () => {
     const [trendingData, setTrendingData] = useState([]);
     useEffect(() => {
         let mounted = true;
@@ -17,7 +17,6 @@ const Home = ({className}) => {
             .then(data => {
                 if (mounted) {
                     setTrendingData(data);
-                    console.log(data, "data");
                 } 
             });
         
@@ -29,15 +28,24 @@ const Home = ({className}) => {
     return (
         <StyledSection>
             <StyledContainer>
+                <StyledHeading>Today's Trending Movies</StyledHeading>
         <StyledHome>
-                <ul className={className}>
+                <ul>
                     {trendingData.map((movie, idx) => (
                         <li key={idx}>
                             <StyledLinkTitle to={`./movies/${movie.id}`}>
                                 <img src={IMAGE_URL + movie.poster_path} alt=""/>
                                 
                             </StyledLinkTitle>
-                            <StyledTitle>{movie.title}</StyledTitle>
+                            <StyledTitle>{movie.title
+                                ? movie.title  
+                                : movie.original_title
+                            }<p>{movie.release_date
+                                ? new Date(movie.release_date).getFullYear()
+                                : '---'
+                                }
+                            </p> 
+                            </StyledTitle>
                         </li>
                     ))}
                 </ul>

@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 
 import { StyledNav } from './Nav/styled-nav';
 import { Loader } from './Loader/Loader';
+//import StyledCast from './Cast/styled-cast';
 
 const Home = lazy(() => import ('pages/Home/Home'));
 const Movies = lazy(()=> import ('pages/Movies/Movies'));
@@ -38,17 +39,17 @@ export const App = () => {
               <MovieDetails />
             </Suspense>}>
             <Route
-            path='cast'
-            element={
-              <Suspense fallback={<Loader />}>
-              <Cast />
-            </Suspense>}/>
+              path='cast'
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Cast />
+                </Suspense>}/>
             <Route
-            path='reviews'
-            element={
-              <Suspense fallback={<Loader />}>
-              <Reviews />
-            </Suspense>}/>
+              path='reviews'
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Reviews />
+                </Suspense>}/>
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>

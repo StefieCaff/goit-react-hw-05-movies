@@ -10,7 +10,6 @@ const getSearch = async (query) => {
     try {
         const { data } = await axios.get(`${SEARCH_PATH}?api_key=${KEY_API}&query=${query}&language=${language}&include_adult=false`);
         const searchMovies = data.results
-        console.log(searchMovies, "variable");
         return searchMovies;
     } catch (error) {
         console.log('Something wrong with API', error.message);
