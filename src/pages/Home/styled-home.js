@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-
 
 const StyledHome = styled.div`
     display: flex;
