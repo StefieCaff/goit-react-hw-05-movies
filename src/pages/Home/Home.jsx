@@ -6,7 +6,8 @@ import { IMAGE_URL } from "API/api-params";
 import { StyledHeading, StyledHome, StyledTitle } from "./styled-home";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledContainer } from "components/Container/styled-container";
-import { StyledLinkTitle } from "./styled-home";
+import { Link } from "react-router-dom";
+import { StyledCard } from "pages/Movies/styled-movies";
 
 const Home = () => {
     const [trendingData, setTrendingData] = useState([]);
@@ -29,14 +30,15 @@ const Home = () => {
         <StyledSection>
             <StyledContainer>
                 <StyledHeading>Today's Trending Movies</StyledHeading>
-        <StyledHome>
-                <ul>
+                    <StyledHome>
+                    <ul>
                     {trendingData.map((movie, idx) => (
                         <li key={idx}>
-                            <StyledLinkTitle to={`./movies/${movie.id}`}>
+                            <Link to={`./movies/${movie.id}`}>
+                                <StyledCard>
                                 <img src={IMAGE_URL + movie.poster_path} alt=""/>
                                 
-                            </StyledLinkTitle>
+                            
                             <StyledTitle>{movie.title
                                 ? movie.title  
                                 : movie.original_title
@@ -45,7 +47,9 @@ const Home = () => {
                                 : '---'
                                 }
                             </p> 
-                            </StyledTitle>
+                                    </StyledTitle>
+                                </StyledCard>
+                            </Link>
                         </li>
                     ))}
                 </ul>

@@ -20,34 +20,30 @@ const StyledMovie = styled.div`
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        margin-top: 20px;
-        
-    }
-    
-    li {
-        width: 140px;
-        height: 340px;
-        background-color: white;
-    }
-
-    img {
-        width: 140px;
-        height: auto;
-        margin-bottom: 5px;
-    }
-
-    h3 {
-        //margin-bottom: 5px;
-        padding: 0 5px;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    div{
-        font-size: 14px;
-        color: #E14FF3;
-        padding: 0 5px;
+        @media(min-width:768px) {
+            gap: 20px;
+        }   
     }
 `;
 
-export default StyledMovie;
+const StyledCard = styled.div`
+    padding-bottom: 5px;
+    background-color: #fff;
+
+     img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 5px;
+        border-bottom: .5px solid #F4F5FF;;
+        @media(min-width:768px) {
+            width: 300px;
+            height: 425px;
+        }
+    }
+    
+`;
+
+export {
+    StyledMovie,
+    StyledCard
+};

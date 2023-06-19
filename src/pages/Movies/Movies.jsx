@@ -5,7 +5,10 @@ import { IMAGE_URL } from "API/api-params";
 
 import { getSearch } from "API/get-search";
 import MovieForm from "components/MovieForm/MovieForm";
-import StyledMovie from "./styled-movies";
+import {StyledMovie, StyledCard} from "./styled-movies";
+import { StyledTitle } from "pages/Home/styled-home";
+import { StyledSection } from "components/Section/styled-section";
+import { StyledContainer } from "components/Container/styled-container";
 
 const Movies = () => {
     const [searchParams] = useSearchParams();
@@ -29,30 +32,37 @@ const Movies = () => {
 
 
     return (
-        <StyledMovie>
-            <h1>Movie Search</h1>
-            <MovieForm onSubmit={handleSubmit} />
-            <ul>
-                {searchData.map((data, idx) => (
-                    <Link to={`./${data.id}`} key={idx}>
-                        <li>
-                            <img src={ data.poster_path
-                                ? IMAGE_URL + data.poster_path
-                                :'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
-                                }
-                                alt={data.title ? data.title : 'Title coming soon'}
-                            />
-                            <h3>{data.title}</h3>
-                            <div>{data.release_date
-                                    ? new Date(data.release_date).getFullYear()
-                                    : '---'
-                                }
-                            </div>
+        <StyledSection>
+            <StyledContainer>
+            <StyledMovie>
+                <h1>Movie Search</h1>
+                <MovieForm onSubmit={handleSubmit} />
+                <ul>
+                    {searchData.map((data, idx) => (
+                        <li key={idx}>
+                            <Link to={`./${data.id}`} >
+                                <StyledCard>
+                                    <img src={ data.poster_path
+                                        ? IMAGE_URL + data.poster_path
+                                        :'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
+                                        }
+                                        alt={data.title ? data.title : 'Title coming soon'}
+                                    />
+                                    <StyledTitle>{data.title}
+                                        <p>{data.release_date
+                                            ? new Date(data.release_date).getFullYear()
+                                            : '---'
+                                            }
+                                        </p>
+                                    </StyledTitle>
+                                </StyledCard>
+                            </Link>
                         </li>
-                    </Link>
-                ))}
-            </ul>
-        </StyledMovie>
+                    ))}
+                </ul>
+            </StyledMovie>
+            </StyledContainer>
+        </StyledSection>
     );
 };
 

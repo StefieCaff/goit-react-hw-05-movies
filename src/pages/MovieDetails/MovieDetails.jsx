@@ -5,10 +5,11 @@ import { getMovie } from "API/get-movie";
 import { IMAGE_URL } from "API/api-params";
 
 import NotFound from "pages/NotFound/NotFound";
-import { Section } from "components/Section/Section";
-import { Container } from "components/Container/Container";
-import { StyledDetailsLink, StyledLinkContainer, StyledMovieDetails } from "./styled-movie-details";
+import { StyledSection } from "components/Section/styled-section";
+import { StyledDetailsFlex, StyledDetailsLink, StyledLinkContainer, StyledMovieDetails } from "./styled-movie-details";
 import { StyledTitle } from "pages/Home/styled-home";
+import { StyledContainer } from "components/Container/styled-container";
+import { StyledDetailsCard } from "./styled-movie-details";
 
 const MovieDetails = () => {
     const { movieID } = useParams();
@@ -27,38 +28,32 @@ const MovieDetails = () => {
     }, []);
     
     const genres = movieData.genres;
-
     return (
-        <Section>
-            <Container>
-                {movieData ? (
+        <StyledSection>
+            
+            {movieData ? (
             <>
+            <StyledContainer>
+                <StyledDetailsCard>
+                    <img src={ movieData.poster_path
+                        ? IMAGE_URL + movieData.poster_path
+                        : 'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
+                        }
+                        alt={movieData.title ? movieData.title : 'Title coming soon'}
+                    />
+                    <StyledTitle>{movieData.title
+                        ? movieData.title  
+                        : movieData.original_title
+                        }
+                        <p>{movieData.release_date
+                            ? new Date(movieData.release_date).getFullYear()
+                            : '---'
+                            }
+                        </p> 
+                    </StyledTitle>                               
+                </StyledDetailsCard>
                 <StyledMovieDetails>
                     <ul>
-                        <li>
-                            <img src={ movieData.poster_path
-                                ? IMAGE_URL + movieData.poster_path
-                                :'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
-                                }
-                                alt={movieData.title ? movieData.title : 'Title coming soon'}
-                            />
-                        </li>
-                        <li>
-                            <StyledTitle>{movieData.title
-                                ? movieData.title  
-                                : movieData.original_title
-                                    }
-                                <div>{movieData.release_date
-                                    ? new Date(movieData.release_date).getFullYear()
-                                    : '---'
-                                }
-                                </div> 
-                            </StyledTitle>                               
-                        </li>
-                        <li>
-                            <h4>Votes:</h4>
-                            <p>{movieData.vote_count}</p>
-                        </li>
                         <li>
                             <h4>Genres</h4>
                                 {movieData.genres
@@ -67,21 +62,36 @@ const MovieDetails = () => {
                                 }
                         </li>
                         <li>
-                            <h4>Overview</h4>
-                                    <p>{ movieData.overview}</p>
+                            <h4>Original Language</h4>
+                            <p>{movieData.original_language}</p>
                         </li>
+                        <li>
+                            <h4>Run Time</h4>
+                           <p>{movieData.runtime}</p>
+                        </li>
+                        <li>
+                            <h4>Votes</h4>
+                            <p>{movieData.vote_count}</p>
+                        </li>
+                        <li>
+                            <StyledDetailsFlex>
+                                <h4>Overview</h4>
+                                <p>{movieData.overview}</p>
+                            </StyledDetailsFlex>
+                        </li>  
                     </ul>
-                </StyledMovieDetails>
+                        </StyledMovieDetails>
+                    </StyledContainer>
                 <StyledLinkContainer>
                     <StyledDetailsLink to="cast">Cast</StyledDetailsLink>
                     <StyledDetailsLink to ="reviews">Reviews</StyledDetailsLink>
                 </StyledLinkContainer>
-            </>
+                </>
             ) : (<NotFound />)}
-            
+            <StyledContainer>
                 <Outlet />
-            </Container>
-        </Section>
+            </StyledContainer>
+        </StyledSection>
     );
 };
 

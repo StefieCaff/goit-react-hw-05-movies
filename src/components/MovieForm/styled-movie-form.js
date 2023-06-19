@@ -14,7 +14,6 @@ const StyledForm = styled.form`
         transition: box-shadow, .9s;
         &:hover,
         &:focus{
-            border-bottom: 1px solid transparent;
             outline: none;
             box-shadow: 
                 rgba(240, 46, 170, 0.4) 0px 5px, 

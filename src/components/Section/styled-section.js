@@ -4,7 +4,7 @@ import { Section } from './Section';
 
 const StyledSection = styled(Section)`
 {
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 30px;
 
   @media screen and (min-width:1200px) {

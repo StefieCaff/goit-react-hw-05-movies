@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledReviews = styled.div`
-    margin: 0 20px;
     li {
         margin-bottom: 10px;
     }
