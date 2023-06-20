@@ -20,7 +20,11 @@ const StyledMovie = styled.div`
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        @media(min-width:768px) {
+        
+        @media (min-width: 768px) {
+            gap: 15px;
+        }
+        @media (min-width: 1024px) {
             gap: 20px;
         }   
     }
@@ -29,16 +33,20 @@ const StyledMovie = styled.div`
 const StyledCard = styled.div`
     padding-bottom: 5px;
     background-color: #fff;
-
+    width: 300px;
      img {
         width: 300px;
         height: auto;
         margin-bottom: 5px;
         border-bottom: .5px solid #F4F5FF;;
         @media(min-width:768px) {
-            width: 300px;
             height: 425px;
+
+            @media (min-width: 768px) {
+            width: 320px;
         }
+        }
+
     }
     
 `;

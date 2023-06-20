@@ -4,7 +4,7 @@ import { Container } from './Container';
 
 const StyledContainer = styled(Container)`
   max-width: 320px;
-  margin: 0 10px;
+  margin: 0 auto;
   
   @media screen and (min-width:768px) {
     max-width: 768px;

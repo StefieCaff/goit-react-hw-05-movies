@@ -37,8 +37,6 @@ const Home = () => {
                             <Link to={`./movies/${movie.id}`}>
                                 <StyledCard>
                                 <img src={IMAGE_URL + movie.poster_path} alt=""/>
-                                
-                            
                             <StyledTitle>{movie.title
                                 ? movie.title  
                                 : movie.original_title

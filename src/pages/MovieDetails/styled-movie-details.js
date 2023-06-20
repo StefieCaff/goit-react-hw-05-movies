@@ -15,22 +15,23 @@ const StyledMovieDetails = styled.div`
     }
     li {
         margin-bottom: 10px;
+        margin-left: 10px;
     }
    
     h4 {
-        margin-left: 5px;
+        
         margin-right: 0px;
     }
 
     p {
-        margin-left: 5px;
+        margin-right: 10px;
         color: grey;
         font-size: 14px;
     }
 `;
 
 const StyledDetailsCard = styled(StyledCard)`
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
     // img {
     //     width: 300px;
     //     border-bottom: .5px solid transparent;
