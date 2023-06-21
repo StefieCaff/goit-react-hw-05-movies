@@ -12,7 +12,17 @@ const StyledContainer = styled(Container)`
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: 1200px;
+    max-width: 1024px;
+  }
+
+   @media screen and (min-width: 1280px) {
+    max-width: 1280px;
+    padding: 0 150px;
+  }
+
+  @media screen and (min-width: 1500px) {
+    max-width: 1500px;
+    padding: 0 175px;
   }
 `;
 

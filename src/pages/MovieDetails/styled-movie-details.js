@@ -45,7 +45,7 @@ const StyledLinkContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
-    padding: 0px 0 20px 0;
+    padding-bottom: 20px;
     border-bottom: 2px solid #4FB3F3;
     background: linear-gradient(195deg, #61f34f, #4ff38f, #b3f34f);
 
