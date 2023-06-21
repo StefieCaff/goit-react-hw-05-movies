@@ -19,7 +19,6 @@ const MovieForm = ({onSubmit}) => {
         nav(`/movies?query=${query}`)
     };
 
-console.log(query, 'query');
     return (
         <StyledSection>
             <StyledContainer>

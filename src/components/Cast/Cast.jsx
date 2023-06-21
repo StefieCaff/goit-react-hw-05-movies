@@ -16,13 +16,12 @@ const Cast = () => {
             .then(data => {
                 if (mounted) {
                     setCastData(data.cast);
-                    console.log(castData, 'cast');
                 };
             });
         return () => mounted = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
- console.log(castData, 'cast');
+
     return (
         <StyledCast>
             <ul>

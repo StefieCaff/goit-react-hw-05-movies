@@ -15,12 +15,11 @@ const Reviews = () => {
             .then(data => {
                 if (mounted) {
                     setReviewsData(data.results);
-                    console.log(reviewsData.content, 'reviews');
                }
            })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-console.log(reviewsData);
+    }, [])
+    
     return (
         <StyledReviews>
             <ul>

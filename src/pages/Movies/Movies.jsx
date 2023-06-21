@@ -9,6 +9,7 @@ import {StyledMovie, StyledCard} from "./styled-movies";
 import { StyledTitle } from "pages/Home/styled-home";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledContainer } from "components/Container/styled-container";
+import NotFound from "pages/NotFound/NotFound";
 
 const Movies = () => {
     const [searchParams] = useSearchParams();
@@ -22,7 +23,7 @@ const Movies = () => {
                 setSearchData(data)
             })
     };
-      console.log(searchData);
+
     useEffect(() => {
         if (query === '') return;
         else {
