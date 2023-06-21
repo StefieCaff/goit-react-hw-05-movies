@@ -4,10 +4,11 @@ import { Container } from './Container';
 
 const StyledContainer = styled(Container)`
   max-width: 320px;
-  margin: 0 auto;
+  margin: 0px auto;
   
   @media screen and (min-width:768px) {
     max-width: 768px;
+    padding: 0 25px;
   }
 
   @media screen and (min-width: 1024px) {

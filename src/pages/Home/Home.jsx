@@ -36,15 +36,23 @@ const Home = () => {
                         <li key={idx}>
                             <Link to={`./movies/${movie.id}`}>
                                 <StyledCard>
-                                <img src={IMAGE_URL + movie.poster_path} alt=""/>
-                            <StyledTitle>{movie.title
-                                ? movie.title  
-                                : movie.original_title
-                            }<p>{movie.release_date
-                                ? new Date(movie.release_date).getFullYear()
-                                : '---'
-                                }
-                            </p> 
+                                    <img src={movie.poster_path
+                                        ? IMAGE_URL + movie.poster_path
+                                        : 'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
+                                        }
+                                        alt={movie.title ? movie.title : 'Title coming soon'}
+                                    />
+                                    <StyledTitle>
+                                        <h3>{movie.title
+                                            ? movie.title  
+                                            : movie.original_title
+                                        }
+                                        </h3>
+                                        <p>{movie.release_date
+                                            ? new Date(movie.release_date).getFullYear()
+                                            : '---'
+                                        }
+                                        </p> 
                                     </StyledTitle>
                                 </StyledCard>
                             </Link>

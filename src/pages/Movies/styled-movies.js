@@ -5,7 +5,7 @@ const StyledMovie = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 26px;
 
     h1 {
         position: absolute;
@@ -18,7 +18,6 @@ const StyledMovie = styled.div`
     ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 10px;
         
         @media (min-width: 768px) {
@@ -33,18 +32,18 @@ const StyledMovie = styled.div`
 const StyledCard = styled.div`
     padding-bottom: 5px;
     background-color: #fff;
-    width: 300px;
-     img {
+    height: 100%; 
+    img {
         width: 300px;
         height: auto;
         margin-bottom: 5px;
-        border-bottom: .5px solid #F4F5FF;;
+        border-bottom: .5px solid #F4F5FF;
+        
         @media(min-width:768px) {
-            height: 425px;
-
-            @media (min-width: 768px) {
-            width: 320px;
+            width: 350px;
         }
+        @media (min-width: 1024px) {
+            width: 310px;
         }
 
     }

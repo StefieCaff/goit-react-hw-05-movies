@@ -48,7 +48,12 @@ const Movies = () => {
                                         }
                                         alt={data.title ? data.title : 'Title coming soon'}
                                     />
-                                    <StyledTitle>{data.title}
+                                    <StyledTitle>
+                                        <h3>{data.title
+                                            ? data.title  
+                                            : data.original_title
+                                        }
+                                        </h3>
                                         <p>{data.release_date
                                             ? new Date(data.release_date).getFullYear()
                                             : '---'

@@ -11,6 +11,7 @@ const StyledMovieDetails = styled.div`
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
+            margin-left: 20px;
         }
     }
     li {
@@ -31,25 +32,19 @@ const StyledMovieDetails = styled.div`
 `;
 
 const StyledDetailsCard = styled(StyledCard)`
-    margin-bottom: 10px;
-    // img {
-    //     width: 300px;
-    //     border-bottom: .5px solid transparent;
-        
-    //     @media (min-width: 768px) {
-    //         width: 343px;
-    //     }
-    //     @media (min-width: 1024px) {
-    //         width: 310px;
-    //     }
-    // }
+   
+`
 
-`;
+const StyledFlexContainer = styled.div`
+    margin-top: 20px;
+    display: flex;
 
+`
 const StyledLinkContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
     padding: 0px 0 20px 0;
     border-bottom: 2px solid #4FB3F3;
     background: linear-gradient(195deg, #61f34f, #4ff38f, #b3f34f);
@@ -69,11 +64,20 @@ const StyledDetailsLink = styled(StyledLink)`
     }
 `;
 const StyledDetailsFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    @media (min-width: 1024px) {
+        margin-left: 20px;
+    }
+
 `
 export {
     StyledMovieDetails,
     StyledDetailsCard,
     StyledDetailsLink,
     StyledLinkContainer,
-    StyledDetailsFlex
+    StyledDetailsFlex,
+    StyledFlexContainer
 };

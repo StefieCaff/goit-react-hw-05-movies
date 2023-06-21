@@ -5,11 +5,13 @@ const StyledHome = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     
     ul{
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+
         @media (min-width: 768px) {
             gap: 15px;
         }
@@ -32,13 +34,27 @@ const StyledHome = styled.div`
     }
 `;
 
-const StyledTitle = styled.h3`
-    margin: 5px;
-    font-weight: bold;
-    font-size: 18px;
+const StyledTitle = styled.div`
+    width: 300px;
+    
+    @media(min-width:768px) {
+        width: 350px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 310px;
+    }
+
+    h3{
+        margin: 5px;
+        font-weight: bold;
+        font-size: 18px; 
+    }
 
     p {
+        margin: 5px;
         font-size: 15px;
+        font-weight: bold;
         color: #E14FF3;
     }
 `;
