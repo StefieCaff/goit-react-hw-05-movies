@@ -9,6 +9,7 @@ import {StyledMovie, StyledCard} from "./styled-movies";
 import { StyledTitle } from "pages/Home/styled-home";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledContainer } from "components/Container/styled-container";
+import NotFound from "pages/NotFound/NotFound";
 
 const Movies = () => {
     const [searchParams] = useSearchParams();
@@ -30,13 +31,13 @@ const Movies = () => {
         };
     }, [query]);
 
-
     return (
         <StyledSection>
             <StyledContainer>
             <StyledMovie>
                 <h1>Movie Search</h1>
-                <MovieForm onSubmit={handleSubmit} />
+                    <MovieForm onSubmit={handleSubmit} />
+                { searchData ? 
                 <ul>
                     {searchData.map((data, idx) => (
                         <li key={idx}>
@@ -65,7 +66,10 @@ const Movies = () => {
                         </li>
                     ))}
                 </ul>
+                    : <NotFound />
+                    }
             </StyledMovie>
+        
             </StyledContainer>
         </StyledSection>
     );

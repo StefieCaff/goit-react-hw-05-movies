@@ -33,6 +33,7 @@ const StyledCard = styled.div`
     padding-bottom: 5px;
     background-color: #fff;
     height: 100%; 
+    
     img {
         width: 300px;
         height: auto;
@@ -41,9 +42,11 @@ const StyledCard = styled.div`
         
         @media(min-width:768px) {
             width: 350px;
+            height: 525px;
         }
         @media (min-width: 1024px) {
             width: 310px;
+            height: 465px;
         }
 
     }
