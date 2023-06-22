@@ -30,6 +30,7 @@ const StyledMovie = styled.div`
 `;
 
 const StyledCard = styled.div`
+    margin-bottom: 10px;
     padding-bottom: 5px;
     background-color: #fff;
     height: 100%; 

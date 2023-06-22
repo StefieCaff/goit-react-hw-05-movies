@@ -5,11 +5,16 @@ import { getMovie } from "API/get-movie";
 import { IMAGE_URL } from "API/api-params";
 
 import NotFound from "pages/NotFound/NotFound";
+
+import StyledGoBack from "components/Button/styled-button";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledDetailsFlex, StyledDetailsLink, StyledLinkContainer, StyledMovieDetails, StyledFlexContainer } from "./styled-movie-details";
 import { StyledTitle } from "pages/Home/styled-home";
 import { StyledContainer } from "components/Container/styled-container";
-import { StyledDetailsCard } from "./styled-movie-details";
+import { StyledCard } from "pages/Movies/styled-movies";
+
+
+
 
 const MovieDetails = () => {
     const { movieID } = useParams();
@@ -26,39 +31,42 @@ const MovieDetails = () => {
         return () => mounted = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    
+    console.log(movieData);
     const genres = movieData.genres;
     return (
         <StyledSection>
             {movieData ? (
             <>
             <StyledContainer>
+                <StyledGoBack/>
                 <StyledFlexContainer>        
-                    <StyledDetailsCard>
+                    <StyledCard>
                         <img src={ movieData.poster_path
                             ? IMAGE_URL + movieData.poster_path
                             : 'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-'
                             }
                             alt={movieData.title ? movieData.title : 'Title coming soon'}
                         />
-                        <StyledTitle>{movieData.title
-                            ? movieData.title  
-                            : movieData.original_title
-                            }
+                        <StyledTitle>
+                            <h3>{movieData.title
+                                ? movieData.title  
+                                : movieData.original_title
+                                }
+                            </h3>
                             <p>{movieData.release_date
                                 ? new Date(movieData.release_date).getFullYear()
                                 : '---'
                                 }
                             </p> 
                         </StyledTitle>                               
-                    </StyledDetailsCard>
+                    </StyledCard>
                     <StyledMovieDetails>
                         <ul>
                             <li>
                                 <h4>Genres</h4>
                                     {movieData.genres
                                         ? genres.map((genre) => (<p key={genre.id}>{genre.name} </p>))
-                                        : <p>Unrecorded genre</p>
+                                        : <p>Unrecorded Genre</p>
                                     }
                             </li>
                             <li>

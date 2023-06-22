@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { StyledLink } from 'components/Nav/styled-nav';
 
-import { StyledCard } from 'pages/Movies/styled-movies';
-
 const StyledMovieDetails = styled.div`
     display: flex;
     flex-direction: column;
     
     ul {
+        margin-left: 5px;
+
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
@@ -16,28 +16,21 @@ const StyledMovieDetails = styled.div`
     }
     li {
         margin-bottom: 10px;
-        margin-left: 10px;
-    }
-   
-    h4 {
-        
-        margin-right: 0px;
     }
 
     p {
-        margin-right: 10px;
         color: grey;
         font-size: 14px;
     }
 `;
 
-const StyledDetailsCard = styled(StyledCard)`
-   
-`
-
 const StyledFlexContainer = styled.div`
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
 
 `
 const StyledLinkContainer = styled.div`
@@ -66,16 +59,15 @@ const StyledDetailsLink = styled(StyledLink)`
 const StyledDetailsFlex = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 5px;
 
-    @media (min-width: 1024px) {
-        margin-left: 20px;
+    @media (min-width: 768px) {
+        margin-left: 25px;
     }
 
 `
 export {
     StyledMovieDetails,
-    StyledDetailsCard,
     StyledDetailsLink,
     StyledLinkContainer,
     StyledDetailsFlex,
