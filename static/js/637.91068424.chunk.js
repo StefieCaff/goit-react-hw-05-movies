@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[637],{8845:function(e,t,r){r.r(t),r.d(t,{default:function(){return a}});var n=r.p+"static/media/cave-of-wonders.16ce067b90886f1b7a6e.jpg",c=r(184),a=function(){return(0,c.jsxs)("div",{children:[(0,c.jsx)("h1",{children:"Sorry, something went wrong..."}),(0,c.jsx)("img",{src:n,alt:""})]})}}}]);
-//# sourceMappingURL=637.91068424.chunk.js.map
