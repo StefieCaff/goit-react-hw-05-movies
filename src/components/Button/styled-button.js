@@ -7,6 +7,7 @@ const StyledGoBack = styled(GoBackButton)`
     justify-content: center;
        
     button{
+        margin-bottom: 10px;
         padding: 0 5px;
         font-size: 16px;
         border: none;

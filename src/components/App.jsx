@@ -3,7 +3,6 @@ import { lazy, Suspense } from 'react';
 
 import { StyledNav } from './Nav/styled-nav';
 import { Loader } from './Loader/Loader';
-//import StyledCast from './Cast/styled-cast';
 
 const Home = lazy(() => import ('pages/Home/Home'));
 const Movies = lazy(()=> import ('pages/Movies/Movies'));
@@ -15,8 +14,7 @@ const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 export const App = () => {
   return (
     <>
-      <StyledNav />
-      
+    <StyledNav />
       <Routes>
         <Route
           path='/'

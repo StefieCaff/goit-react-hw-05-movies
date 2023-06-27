@@ -48,7 +48,7 @@ const StyledLinkContainer = styled.div`
     }
 `;
 const StyledDetailsLink = styled(StyledLink)`
-    margin: 5px 20px;
+    margin: 5px 40px;
     font-size: 18px;
     font-weight: b;
     &:hover,
