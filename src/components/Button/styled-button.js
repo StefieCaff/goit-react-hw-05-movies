@@ -4,18 +4,16 @@ import GoBackButton from './Button';
 
 const StyledGoBack = styled(GoBackButton)`
     display: flex;
-    justify-content: flex-end;
-    
+    justify-content: center;
+       
     button{
-        margin-bottom: 15px;
-        margin-right: 10px;
-        padding: 10px 10px 0 5px;
+        padding: 0 5px;
         font-size: 16px;
         border: none;
-        border-bottom: 1px solid #4FB3F3;
+        color: #4FB3F3;
+        font-weight: bold;
         background: transparent;
         transition: box-shadow, .9s;
-    
         &:hover,
         &:focus{
             outline: none;

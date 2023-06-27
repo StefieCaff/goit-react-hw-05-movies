@@ -15,6 +15,7 @@ const StyledMovieDetails = styled.div`
         }
     }
     li {
+        margin-right: 10px;
         margin-bottom: 10px;
     }
 
@@ -36,20 +37,20 @@ const StyledFlexContainer = styled.div`
 const StyledLinkContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding: 10px 0;
     border-bottom: 2px solid #4FB3F3;
     background: linear-gradient(195deg, #61f34f, #4ff38f, #b3f34f);
 
     @media (min-width: 768px) {
-        justify-content: flex-end;
+        justify-content: center;
     }
 `;
 const StyledDetailsLink = styled(StyledLink)`
     margin: 5px 20px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: b;
     &:hover,
     &:focus,
     &:active{

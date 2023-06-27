@@ -35,10 +35,11 @@ const MovieDetails = () => {
     const genres = movieData.genres;
     return (
         <StyledSection>
+            <StyledGoBack />
             {movieData ? (
             <>
             <StyledContainer>
-                <StyledGoBack/>
+                
                 <StyledFlexContainer>        
                     <StyledCard>
                         <img src={ movieData.poster_path

@@ -34,7 +34,8 @@ const StyledCard = styled.div`
     padding-bottom: 5px;
     background-color: #fff;
     height: 100%; 
-    
+    border: .5px solid #61f34f;
+
     img {
         width: 300px;
         height: auto;
