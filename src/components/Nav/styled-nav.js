@@ -7,9 +7,13 @@ const StyledNav = styled(Nav)`
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 25px;
+   padding: 25px 0;
    background: linear-gradient(195deg, #61f34f, #4ff38f, #b3f34f);
    border-bottom: 2px solid #4FB3F3;
+    
+   @media (min-width: 768px) {
+        padding: 25px;
+    }
 `
 const StyledLink = styled(NavLink)`
     margin:0 40px;

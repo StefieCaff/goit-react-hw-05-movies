@@ -6,8 +6,12 @@ const StyledNotFound = styled.div`
     align-items: center;
 
     h1 {
-        font-size: 28px;
+        
+        font-size: 16px;
         margin-bottom: 20px;
+        @media (min-width: 768px) {
+           font-size: 28px; 
+        }
     }
 
     img{

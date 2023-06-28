@@ -35,9 +35,9 @@ const Movies = () => {
         <StyledSection>
             <StyledContainer>
             <StyledMovie>
-                <h1>Movie Search</h1>
+                <h1 className='aria-hidden'>Movie Search</h1>
                     <MovieForm onSubmit={handleSubmit} />
-                { searchData ? 
+                { searchData ?
                 <ul>
                     {searchData.map((data, idx) => (
                         <li key={idx}>
@@ -66,10 +66,9 @@ const Movies = () => {
                         </li>
                     ))}
                 </ul>
-                    : <NotFound />
-                    }
+                : <NotFound/>
+                }
             </StyledMovie>
-        
             </StyledContainer>
         </StyledSection>
     );

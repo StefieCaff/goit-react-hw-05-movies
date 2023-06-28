@@ -7,7 +7,7 @@ const StyledMovie = styled.div`
     justify-content: center;
     margin-top: 26px;
 
-    h1 {
+    .aria-hidden {
         position: absolute;
         left: -10000px;
         width: 1px;
@@ -18,11 +18,8 @@ const StyledMovie = styled.div`
     ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 15px;
         
-        @media (min-width: 768px) {
-            gap: 15px;
-        }
         @media (min-width: 1024px) {
             gap: 20px;
         }   

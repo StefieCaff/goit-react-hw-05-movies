@@ -1,15 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-import { StyledNav } from './Nav/styled-nav';
 import { Loader } from './Loader/Loader';
+
+import NotFound from 'pages/NotFound/NotFound';
+import { StyledNav } from './Nav/styled-nav';
 
 const Home = lazy(() => import ('pages/Home/Home'));
 const Movies = lazy(()=> import ('pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
-const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -51,7 +52,6 @@ export const App = () => {
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
-      
     </>
   );
 };

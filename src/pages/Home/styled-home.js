@@ -10,11 +10,8 @@ const StyledHome = styled.div`
     ul{
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-
-        @media (min-width: 768px) {
-            gap: 15px;
-        }
+        gap: 15px;
+        
         @media (min-width: 1024px) {
             gap: 20px;
         }
@@ -29,7 +26,8 @@ const StyledHome = styled.div`
             rgba(240, 46, 170, 0.4) 0px 5px,
             rgba(240, 46, 170, 0.3) 0px 10px,
             rgba(240, 46, 170, 0.2) 0px 15px,
-            rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+            rgba(240, 46, 170, 0.1) 0px 20px,
+            rgba(240, 46, 170, 0.05) 0px 25px;
         }
     }
 `;
