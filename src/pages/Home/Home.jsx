@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
 
 import { getTrending } from "API/get-trending";
 import { IMAGE_URL } from "API/api-params";
@@ -11,6 +11,8 @@ import { StyledCard } from "pages/Movies/styled-movies";
 
 const Home = () => {
     const [trendingData, setTrendingData] = useState([]);
+    const location = useLocation();
+    console.log(location.state);
     useEffect(() => {
         let mounted = true;
 
@@ -34,7 +36,7 @@ const Home = () => {
                     <ul>
                     {trendingData.map((movie, idx) => (
                         <li key={idx}>
-                            <Link to={`./movies/${movie.id}`}>
+                            <Link to={`./movies/${movie.id}`} state={{ from: location }}>
                                 <StyledCard>
                                     <img src={movie.poster_path
                                         ? IMAGE_URL + movie.poster_path

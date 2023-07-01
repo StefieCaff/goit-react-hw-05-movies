@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Outlet } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 import { getMovie } from "API/get-movie";
 import { IMAGE_URL } from "API/api-params";
 
@@ -19,7 +19,7 @@ import { StyledCard } from "pages/Movies/styled-movies";
 const MovieDetails = () => {
     const { movieID } = useParams();
     const [movieData, setMovieData] = useState([]);
-
+    const location = useLocation();
     useEffect(() => {
         let mounted = true;
         getMovie(movieID)
@@ -91,8 +91,8 @@ const MovieDetails = () => {
                     </StyledFlexContainer>
             </StyledContainer>
             <StyledLinkContainer>
-                <StyledDetailsLink to="cast">Cast</StyledDetailsLink>
-                    <StyledDetailsLink to ="reviews">Reviews</StyledDetailsLink>
+                <StyledDetailsLink to="cast" state={{ from: location }}>Cast</StyledDetailsLink>
+                    <StyledDetailsLink to ="reviews" state={{ from: location }}>Reviews</StyledDetailsLink>
             </StyledLinkContainer>
             </>
             ) : (<NotFound />)}

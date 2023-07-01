@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 import { IMAGE_URL } from "API/api-params";
 import { getSearch } from "API/get-search";
 
@@ -26,7 +26,7 @@ const Movies = () => {
     const [searchData, setSearchData] = useState([]); // Stores the search results
     const [searchParams, setSearchParams] = useSearchParams(); // Manages query parameter in URL
     const [status, setStatus] = useState(STATUS.IDLE); // Tracks API request status 
-  
+    const location = useLocation();
    
     useEffect(() => {
     // Trigger the API request when searchParams change
@@ -86,7 +86,7 @@ const Movies = () => {
                                 <ul>
                                     {searchData.map((data, idx) => (
                                         <li key={idx}>
-                                            <Link to={`./${data.id}`} >
+                                            <Link to={`./${data.id}`} state={{ from: location }}>
                                                 <StyledCard>
                                                     <img src={data.poster_path
                                                         ? IMAGE_URL + data.poster_path
