@@ -12,7 +12,7 @@ import { StyledCard } from "pages/Movies/styled-movies";
 const Home = () => {
     const [trendingData, setTrendingData] = useState([]);
     const location = useLocation();
-    console.log(location.state);
+    
     useEffect(() => {
         let mounted = true;
 
