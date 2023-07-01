@@ -6,7 +6,7 @@ import { IMAGE_URL } from "API/api-params";
 
 import NotFound from "pages/NotFound/NotFound";
 
-import StyledGoBack from "components/Button/styled-button";
+import {StyledGoBack} from "components/Button/styled-button";
 import { StyledSection } from "components/Section/styled-section";
 import { StyledDetailsFlex, StyledDetailsLink, StyledLinkContainer, StyledMovieDetails, StyledFlexContainer } from "./styled-movie-details";
 import { StyledTitle } from "pages/Home/styled-home";
