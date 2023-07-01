@@ -86,7 +86,7 @@ const Movies = () => {
                                 <ul>
                                     {searchData.map((data, idx) => (
                                         <li key={idx}>
-                                            <Link to={`./${data.id}`} state={{ from: location }}>
+                                            <Link to={`./${data.id}`} state={{ from: location.pathname + location.search }}>
                                                 <StyledCard>
                                                     <img src={data.poster_path
                                                         ? IMAGE_URL + data.poster_path

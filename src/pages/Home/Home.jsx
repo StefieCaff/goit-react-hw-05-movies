@@ -36,7 +36,7 @@ const Home = () => {
                     <ul>
                     {trendingData.map((movie, idx) => (
                         <li key={idx}>
-                            <Link to={`./movies/${movie.id}`} state={{ from: location }}>
+                            <Link to={`./movies/${movie.id}`} state={{ from: location.pathname + location.search}}>
                                 <StyledCard>
                                     <img src={movie.poster_path
                                         ? IMAGE_URL + movie.poster_path

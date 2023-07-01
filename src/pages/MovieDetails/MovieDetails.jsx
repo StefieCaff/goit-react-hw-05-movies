@@ -31,8 +31,9 @@ const MovieDetails = () => {
         return () => mounted = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-    console.log(movieData);
+    
     const genres = movieData.genres;
+    const path = location?.state?.from ?? '/';
     return (
         <StyledSection>
             <StyledGoBack />
@@ -91,8 +92,8 @@ const MovieDetails = () => {
                     </StyledFlexContainer>
             </StyledContainer>
             <StyledLinkContainer>
-                <StyledDetailsLink to="cast" state={{ from: location }}>Cast</StyledDetailsLink>
-                    <StyledDetailsLink to ="reviews" state={{ from: location }}>Reviews</StyledDetailsLink>
+                <StyledDetailsLink to="cast" state={{ from: path }}>Cast</StyledDetailsLink>
+                    <StyledDetailsLink to ="reviews" state={{ from: path }}>Reviews</StyledDetailsLink>
             </StyledLinkContainer>
             </>
             ) : (<NotFound />)}
