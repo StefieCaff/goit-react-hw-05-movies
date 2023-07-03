@@ -6,7 +6,7 @@ const GoBackButton = ({ className }) => {
  
   return (
     <div className={className}>
-      <StyledGoBackLink to={location.state.from}>Back</StyledGoBackLink>
+      <StyledGoBackLink>Back</StyledGoBackLink>
     </div>);
 };
 
