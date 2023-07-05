@@ -1,10 +1,10 @@
 import { StyledGoBackLink } from "./styled-button";
-
+import { useLocation } from "react-router-dom";
 const GoBackButton = ({ className }) => {
-   
+  const location = useLocation();
   return (
     <div className={className}>
-      <StyledGoBackLink>Back</StyledGoBackLink>
+      <StyledGoBackLink to={location.state.from}>Back</StyledGoBackLink>
     </div>);
 };
 
