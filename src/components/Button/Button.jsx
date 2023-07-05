@@ -4,7 +4,7 @@ const GoBackButton = ({ className }) => {
   const location = useLocation();
   return (
     <div className={className}>
-      <StyledGoBackLink to={location.state.from}>Back</StyledGoBackLink>
+      <StyledGoBackLink to={location.state.from} state={{ from: location.pathname }}>Back</StyledGoBackLink>
     </div>);
 };
 
