@@ -17,5 +17,3 @@ const getSearch = async (query) => {
 };
 
 export { getSearch }
-
-// https://api.themoviedb.org/3/search/movie?api_key=cc8aceddc1acb4be5d6024b16563f8b2&query=fdsaffdsa
