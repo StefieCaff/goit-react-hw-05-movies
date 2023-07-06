@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7b1350ae.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.d4dd1e2a.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.3ca57463.js",
     "static/js/384.8f738edb.chunk.js": "/goit-react-hw-05-movies/static/js/384.8f738edb.chunk.js",
     "static/js/886.4cf0d194.chunk.js": "/goit-react-hw-05-movies/static/js/886.4cf0d194.chunk.js",
-    "static/js/729.fdc10fae.chunk.js": "/goit-react-hw-05-movies/static/js/729.fdc10fae.chunk.js",
+    "static/js/729.7abff0c5.chunk.js": "/goit-react-hw-05-movies/static/js/729.7abff0c5.chunk.js",
     "static/js/789.124bcd24.chunk.js": "/goit-react-hw-05-movies/static/js/789.124bcd24.chunk.js",
     "static/js/537.37d4a788.chunk.js": "/goit-react-hw-05-movies/static/js/537.37d4a788.chunk.js",
     "static/js/279.31e0d11f.chunk.js": "/goit-react-hw-05-movies/static/js/279.31e0d11f.chunk.js",
     "static/media/cave-of-wonders.jpg": "/goit-react-hw-05-movies/static/media/cave-of-wonders.16ce067b90886f1b7a6e.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7b1350ae.css.map": "/goit-react-hw-05-movies/static/css/main.7b1350ae.css.map",
-    "main.d4dd1e2a.js.map": "/goit-react-hw-05-movies/static/js/main.d4dd1e2a.js.map",
+    "main.3ca57463.js.map": "/goit-react-hw-05-movies/static/js/main.3ca57463.js.map",
     "384.8f738edb.chunk.js.map": "/goit-react-hw-05-movies/static/js/384.8f738edb.chunk.js.map",
     "886.4cf0d194.chunk.js.map": "/goit-react-hw-05-movies/static/js/886.4cf0d194.chunk.js.map",
-    "729.fdc10fae.chunk.js.map": "/goit-react-hw-05-movies/static/js/729.fdc10fae.chunk.js.map",
+    "729.7abff0c5.chunk.js.map": "/goit-react-hw-05-movies/static/js/729.7abff0c5.chunk.js.map",
     "789.124bcd24.chunk.js.map": "/goit-react-hw-05-movies/static/js/789.124bcd24.chunk.js.map",
     "537.37d4a788.chunk.js.map": "/goit-react-hw-05-movies/static/js/537.37d4a788.chunk.js.map",
     "279.31e0d11f.chunk.js.map": "/goit-react-hw-05-movies/static/js/279.31e0d11f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7b1350ae.css",
-    "static/js/main.d4dd1e2a.js"
+    "static/js/main.3ca57463.js"
   ]
 }
